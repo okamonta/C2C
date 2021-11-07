@@ -1,24 +1,37 @@
-# README
+# C2C
+(challenger to coach, coach to challenger)
+## サイト概要
+挑戦する全ての人をコーチングする全ての人がサポートできる動画投稿サービス
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### サイトテーマ
+自ら発信してコーチングを受ける時代。あなたのコーチは一人じゃない。
 
-Things you may want to cover:
+### テーマを選んだ理由
+このご時世、部活動やイベントなどが満足に行えない状況である。そんな中でも、「ステップアップしたい」「新たに挑戦したい」そう思ってる人はたくさんいる。
+その問題を解決するためには、挑戦する全ての人が「いつでもどこでも誰でもコーチングを受けれる」サービスを提供したいと思ったから。
 
-* Ruby version
+### ターゲットユーザ
+挑戦している全ての人・コーチングをしている全ての人
 
-* System dependencies
+### 主な利用シーン
+挑戦しているあらゆる分野に対して、疑問質問が出てきたとき。
+コーチ側が主催するイベントやクリニックのお知らせするとき。
 
-* Configuration
+### 使用方法
+チャレンジャー：分からないとこやアドバイスが欲しい時に短い動画にコメントを加えて投稿する。お気に入りのコーチをフォローすることもできる。
+コーチ：チャレンジャーが投稿した動画を確認して、アドバイスのコメントを追加できる。また、コーチが主催するイベントやクリニックの告知を投稿できる。
 
-* Database creation
+## 設計書
 
-* Database initialization
+## チャレンジ要素一覧
+https://docs.google.com/spreadsheets/d/1voM496UtqmX1pDva0tqWxyvEIlHWA7shR1HLtVzpHYs/edit?usp=sharing
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
 
-* Deployment instructions
-
-* ...
+## 使用素材
