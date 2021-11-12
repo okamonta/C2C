@@ -7,6 +7,14 @@
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
+  
+  <div class="account-field">
+    <%= f.label :account %><br />
+    <%= f.label :challenger  %>
+    <%= f.radio_button :account, :challenger %>
+    <%= f.label :coach  %>
+    <%= f.radio_button :account, :coach %>
+  </div>
 
   <div class="field">
     <%= f.label :password %>
