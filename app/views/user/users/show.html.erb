@@ -1,1 +1,38 @@
-マイページ
+<!--if チャレンジャー-->
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+      <table class="table">
+        <tr>
+          <%= attachment_image_tag(@user, :icon, :full, 100, 100, fallback: "no_image.jpeg") %>
+        </tr>
+        <tr>
+          <th>名前</th>
+          <th><%= @user.full_name %></th>
+        </tr>
+        <tr>
+          <th>ニックネーム</th>
+          <th><%= @user.nick_name %></th>
+        </tr>
+        <tr>
+          <th>ジャンル</th>
+          <th><%= @user.genre_id %></th>
+        </tr>
+        <tr>
+          <th>ステータス</th>
+          <th><%= @user.status_id %></th>
+        </tr>
+        <tr>
+          <th>アカウント</th>
+          <th><%= @user.account %></th>
+        </tr>
+        <tr>
+          <th>メールアドレス</th>
+          <th><%= @user.email %></th>
+        </tr>
+      </table>
+        
+    </div>
+  </div>
+</div>
