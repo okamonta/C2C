@@ -10,6 +10,6 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :informations, dependent: :destroy
   
-  belongs_to :genre
-  belongs_to :status
+  belongs_to :genre, optional: true
+  belongs_to :status, optional: true
 end
