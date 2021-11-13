@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h4 class="mypage-title">ステータス一覧・追加</h4>
+
+      <table class="table table-noborder status-add-table">
+        <%= form_with model:@status, url:admin_statuses_path, local:true do |f| %>
+          <div class="row">
+            <div class="form-group">
+              <td>
+                <%= f.label :name, "ステータス名" %>
+              </td>
+              <td>
+                <%= f.text_field :name, placeholder:"ステータス名"  %>
+              </td>
+            </div>
+            <div class="form-group">
+              <td><%= f.submit "新規登録", class: 'bnt btn-success rounded status-add-buttom' %></td>
+            </div>
+          </div>
+        <% end %>
+      </table>
+
+      <div class="status-table">
+        <table class="table table-hover user-index-table">
+          <thead>
+            <tr class="active">
+              <th>ジャンル</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @statuses.each do |status| %>
+              <tr>
+                <td><%= status.name %></td>
+                <td><%= link_to '編集する', edit_admin_status_path(status), class: 'bnt btn-success rounded status-edit-buttom' %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
