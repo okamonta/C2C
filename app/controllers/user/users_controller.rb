@@ -2,6 +2,11 @@ class User::UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+    # if current_user == User.where("@user.account = 'challenger'")
+    #   redirect_to user_user_path(user.id)
+    # else
+    #   redirect_to user_root_path
+    # end
   end
   
   def index

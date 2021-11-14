@@ -5,7 +5,8 @@
       <%= form_with model: @user,url: user_user_path(current_user), local: true do |f| %>
         <table class="table">
           <tr>
-            <%= attachment_image_tag(@user, :icon, :full, 100, 100, fallback: "no_image.jpeg") %>
+            <th><%= attachment_image_tag(@user, :icon, :full, 100, 100, fallback: "no_image.jpeg") %></th>
+            
           </tr>
           <tr>
             <th>名前</th>

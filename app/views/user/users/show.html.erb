@@ -1,44 +1,95 @@
 <!--if チャレンジャー-->
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      
-      <table class="table">
-        <tr>
-          <%= attachment_image_tag(@user, :icon, :full, 100, 100, fallback: "no_image.jpeg") %>
-        </tr>
-        <tr>
-          <th>名前</th>
-          <th><%= @user.full_name %></th>
-        </tr>
-        <tr>
-          <th>ニックネーム</th>
-          <th><%= @user.nick_name %></th>
-        </tr>
-        <tr>
-          <th>ジャンル</th>
-          <th><%= @user.genre_id %></th>
-        </tr>
-        <tr>
-          <th>ステータス</th>
-          <th><%= @user.status_id %></th>
-        </tr>
-        <tr>
-          <th>アカウント</th>
-          <th><%= @user.account %></th>
-        </tr>
-        <tr>
-          <th>メールアドレス</th>
-          <th><%= @user.email %></th>
-        </tr>
-        <tr>
-          <th><%= link_to "編集", edit_user_user_path(@user.id) %></th>
-        </tr>
-        <tr>
-          <th><%= link_to "動画投稿", new_user_video_path %></th>
-        </tr>
-      </table>
-        
+<% if current_user.account == "challenger" %>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table">
+          <tr>
+            <%= attachment_image_tag(@user, :icon, :full, 100, 100, fallback: "no_image.jpeg") %>
+          </tr>
+          <tr>
+            <th>名前</th>
+            <th><%= @user.full_name %></th>
+          </tr>
+          <tr>
+            <th>ニックネーム</th>
+            <th><%= @user.nick_name %></th>
+          </tr>
+          <tr>
+            <th>ジャンル</th>
+            <th><%= @user.genre.name %></th>
+          </tr>
+          <tr>
+            <th>ステータス</th>
+            <th><%= @user.status.name %></th>
+          </tr>
+          <tr>
+            <th>アカウント</th>
+            <th><%= @user.account %></th>
+          </tr>
+          <tr>
+            <th>メールアドレス</th>
+            <th><%= @user.email %></th>
+          </tr>
+          <tr>
+            <th><%= link_to "編集", edit_user_user_path(@user.id) %></th>
+          </tr>
+          <tr>
+            <th><%= link_to "動画投稿", new_user_video_path %></th>
+          </tr>
+          <tr>
+            <th><%= link_to "動画一覧", user_videos_path %></th>
+          </tr>
+          <tr>
+            <th><%= link_to "コーチ一覧", user_users_path %></th>
+          </tr>
+        </table>
+      </div>
     </div>
   </div>
-</div>
+<% else %>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table">
+          <tr>
+            <%= attachment_image_tag(@user, :icon, :full, 100, 100, fallback: "no_image.jpeg") %>
+          </tr>
+          <tr>
+            <th>名前</th>
+            <th><%= @user.full_name %></th>
+          </tr>
+          <tr>
+            <th>ニックネーム</th>
+            <th><%= @user.nick_name %></th>
+          </tr>
+          <tr>
+            <th>ジャンル</th>
+            <th><%= @user.genre.name %></th>
+          </tr>
+          <tr>
+            <th>ステータス</th>
+            <th><%= @user.status.name %></th>
+          </tr>
+          <tr>
+            <th>アカウント</th>
+            <th><%= @user.account %></th>
+          </tr>
+          <tr>
+            <th>メールアドレス</th>
+            <th><%= @user.email %></th>
+          </tr>
+          <tr>
+            <th><%= link_to "編集", edit_user_user_path(@user.id) %></th>
+          </tr>
+          <tr>
+            <th><%= link_to "動画一覧", user_videos_path %></th>
+          </tr>
+          <tr>
+            <th><%= link_to "告知投稿", new_user_information_path %></th>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+<% end %>

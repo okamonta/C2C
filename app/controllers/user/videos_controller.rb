@@ -6,13 +6,19 @@ class User::VideosController < ApplicationController
   
   def create
     @video = Video.new(video_params)
-    @video.create
+    @video.save
     # 動画一覧に遷移に後ほど変更（今は動画）
-    redirect_to @video
+    redirect_to new_user_video_path
   end
 
   def show
     @video = Video.find(params[:id])
+    @user = @video.user
+    @comment = Comment.new
+  end
+  
+  def index
+    @videos = Video.all
   end
 
   private
