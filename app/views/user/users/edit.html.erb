@@ -1,0 +1,41 @@
+<!--if チャレンジャー-->
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <%= form_with model: @user,url: user_user_path(current_user), local: true do |f| %>
+        <table class="table">
+          <tr>
+            <%= attachment_image_tag(@user, :icon, :full, 100, 100, fallback: "no_image.jpeg") %>
+          </tr>
+          <tr>
+            <th>名前</th>
+            <th><%= f.text_field :full_name %></th>
+          </tr>
+          <tr>
+            <th>ニックネーム</th>
+            <th><%= f.text_field :nick_name %></th>
+          </tr>
+          <tr>
+            <th>ジャンル</th>
+            <th><%= f.collection_select :genre_id, Genre.all, :id, :name, include_blank: "--選択して下さい--" %></th>
+          </tr>
+          <tr>
+            <th>ステータス</th>
+            <th><%= f.collection_select :status_id, Status.all, :id, :name, include_blank: "--選択して下さい--" %></th>
+          </tr>
+          <tr>
+            <th>アカウント</th>
+            <th><%= @user.account %></th>
+          </tr>
+          <tr>
+            <th>メールアドレス</th>
+            <th><%= f.text_field :email %></th>
+          </tr>
+          <tr>
+            <th><%= f.submit "変更を保存", class:"mx-5  btn btn-success",:size=>"30" %></th>
+          </tr>
+        </table>
+      <% end %>
+    </div>
+  </div>
+</div>
