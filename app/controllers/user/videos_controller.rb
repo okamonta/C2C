@@ -6,9 +6,10 @@ class User::VideosController < ApplicationController
   
   def create
     @video = Video.new(video_params)
-    @video.save
+    @video.user_id = current_user.id
+    @video.save!
     # 動画一覧に遷移に後ほど変更（今は動画）
-    redirect_to new_user_video_path
+    redirect_to user_video_path(@video.id)
   end
 
   def show
