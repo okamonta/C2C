@@ -1,8 +1,9 @@
 class User::CommentsController < ApplicationController
   
   def index
-    @video = Video.find(params[:video])
+    @video = Video.find(params[:video_id])
     @comments = Comment.all
+    @comment = Comment.new
   end
     
   def create

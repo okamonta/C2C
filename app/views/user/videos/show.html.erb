@@ -6,9 +6,4 @@
 
 <!--%= render 'comments/comment', video: @video, comment: @comment %>-->
 
-<%= link_to "コメントする", user_comments_path(current_user) %>
-
-<%= form_with model:[@video,@comment], url: user_comments_path do |f| %>
-  <%= f.text_area :comment, size:"90x5" %><br>
-  <%= f.submit '送信'%>
-<% end %>
+<%= link_to "コメントする", user_video_comments_path(current_user) %>

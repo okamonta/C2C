@@ -5,8 +5,9 @@ Rails.application.routes.draw do
     root to: 'homes#top'
     get 'homes/contact' => 'homes#conta'
     resources :users, only: [:index, :show, :edit, :update]
-    resources :videos, only: [:new, :index, :show, :create, :edit, :update, :destroy]
-    resources :comments, only: [:index, :create, :destroy]
+    resources :videos, only: [:new, :index, :show, :create, :edit, :update, :destroy] do
+      resources :comments, only: [:index, :create, :destroy]
+    end
     resources :informations, only: [:new, :index, :show, :create, :edit, :update, :destroy]
   end
   
