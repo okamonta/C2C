@@ -1,5 +1,14 @@
 <% if @video.video.attached? %>
+  <video src="<%= rails_blob_path(@video.video) %>" type="video/mp4" controls></video>
   <p><%= @video.title %></p> <br>
   <p><%= @video.content %></p>
-  <video src="<%= rails_blob_path(@video.video) %>" type="video/mp4" controls></video>
+<% end %>
+
+<!--%= render 'comments/comment', video: @video, comment: @comment %>-->
+
+<%= link_to "コメントする", user_comments_path(current_user) %>
+
+<%= form_with model:[@video,@comment], url: user_comments_path do |f| %>
+  <%= f.text_area :comment, size:"90x5" %><br>
+  <%= f.submit '送信'%>
 <% end %>

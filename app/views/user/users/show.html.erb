@@ -16,12 +16,14 @@
             <th><%= @user.nick_name %></th>
           </tr>
           <tr>
+            <% @user_genre = @user.genre %>
             <th>ジャンル</th>
-            <th><%= @user.genre.name %></th>
+            <th><%= @user_genre.name %></th>
           </tr>
           <tr>
+            <% @user_status = @user.status %>
             <th>ステータス</th>
-            <th><%= @user.status.name %></th>
+            <th><%= @user_status.name %></th>
           </tr>
           <tr>
             <th>アカウント</th>
@@ -64,12 +66,14 @@
             <th><%= @user.nick_name %></th>
           </tr>
           <tr>
+            <% @user_genre = @user.genre %>
             <th>ジャンル</th>
-            <th><%= @user.genre.name %></th>
+            <th><%= @user_genre.name %></th>
           </tr>
           <tr>
+            <% @user_status = @user.status %>
             <th>ステータス</th>
-            <th><%= @user.status.name %></th>
+            <th><%= @user_status.name %></th>
           </tr>
           <tr>
             <th>アカウント</th>

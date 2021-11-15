@@ -7,8 +7,8 @@ class User::VideosController < ApplicationController
   def create
     @video = Video.new(video_params)
     @video.user_id = current_user.id
-    @video.save!
-    # 動画一覧に遷移に後ほど変更（今は動画）
+    @video.save
+    # showに遷移
     redirect_to user_video_path(@video.id)
   end
 
@@ -19,7 +19,13 @@ class User::VideosController < ApplicationController
   end
   
   def index
-    @videos = Video.all
+    # @user = User.find(current_user.id)
+    # @videos = Video.all
+    if current_user.account = "challenger"
+      @videos = Video.where(user_id: current_user.id)
+    else
+      @videos = Video.all
+    end
   end
 
   private
