@@ -12,11 +12,17 @@ class User::CommentsController < ApplicationController
     @comment.user_id = current_user.id
     @comment.video_id = @video.id
     if @comment.save
-      redirect_to user_video_path(@video.id)
+      redirect_to user_video_comments_path(@video.id)
     else
       @user = @video.user
       render 'videos/show'
     end
+  end
+  
+  def destroy
+    @video = Video.find(params[:video_id])
+    @comment = @video.comments.find(params[:id])
+    @comment.destroy
   end
   
   private

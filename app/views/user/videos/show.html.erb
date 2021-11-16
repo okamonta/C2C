@@ -6,4 +6,4 @@
 
 <!--%= render 'comments/comment', video: @video, comment: @comment %>-->
 
-<%= link_to "コメントする", user_video_comments_path(current_user) %>
+<%= link_to "コメントする", user_video_comments_path(@video) %>

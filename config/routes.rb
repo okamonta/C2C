@@ -3,8 +3,10 @@ Rails.application.routes.draw do
   
   namespace :user do
     root to: 'homes#top'
-    get 'homes/contact' => 'homes#conta'
-    resources :users, only: [:index, :show, :edit, :update]
+    get 'homes/contact' => 'homes#contact'
+    resources :users, only: [:index, :show, :edit, :update] do
+      resource :relationships, only: [:create, :destroy]
+    end
     resources :videos, only: [:new, :index, :show, :create, :edit, :update, :destroy] do
       resources :comments, only: [:index, :create, :destroy]
     end
