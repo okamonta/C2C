@@ -33,6 +33,10 @@
             <th><%= f.text_field :email %></th>
           </tr>
           <tr>
+            <th>メッセージ</th>
+            <th><%= f.text_area :message %></th>
+          </tr>
+          <tr>
             <th><%= f.submit "変更を保存", class:"mx-5  btn btn-success",:size=>"30" %></th>
           </tr>
         </table>

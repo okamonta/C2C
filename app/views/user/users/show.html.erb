@@ -34,6 +34,10 @@
             <th><%= @user.email %></th>
           </tr>
           <tr>
+            <th>メッセージ</th>
+            <th><%= @user.message %></th>
+          </tr>
+          <tr>
             <th><%= link_to "編集", edit_user_user_path(@user.id) %></th>
           </tr>
           <tr>
@@ -82,6 +86,10 @@
           <tr>
             <th>メールアドレス</th>
             <th><%= @user.email %></th>
+          </tr>
+          <tr>
+            <th>メッセージ</th>
+            <th><%= @user.message %></th>
           </tr>
           <tr>
             <th><%= link_to "編集", edit_user_user_path(@user.id) %></th>
