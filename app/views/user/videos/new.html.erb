@@ -1,6 +1,9 @@
-<%= form_with model: @video, url: user_videos_path, local: true do |form| %>
-  <p>title</p><%= form.text_field :title %> <br>
-  <p>content</p><%= form.text_area :content %> <br>
-  <p>video</p><%= form.file_field :video %> <br>
-  <%= form.submit %>
+<h2>動画投稿</h2>
+
+<%= form_with model: @video, url: user_videos_path, local: true do |f| %>
+  <p>video</p><%= f.file_field :video %> <br>
+  <p>title</p><%= f.text_field :title %> <br>
+  <p>content</p><%= f.text_area :content %> <br>
+  <p>genre</p><%= f.collection_select :genre_id, Genre.all, :id, :name, include_blank: "--選択して下さい--" %> <br>
+  <%= f.submit %>
 <% end %>

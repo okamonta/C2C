@@ -1,3 +1,5 @@
+<h2>告知一覧</h2>
+
 <% @informations. each do |information| %>
   <%= link_to information.title, user_information_path(information) %>
 <% end %>

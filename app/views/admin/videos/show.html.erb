@@ -10,7 +10,6 @@
 
 <!--%= render 'comments/comment', video: @video, comment: @comment %>-->
 
-<!--自分の投稿時のみ表示に-->
-<%= link_to "削除する", user_video_path(@video), method: :delete %>
+<%= link_to "削除する", admin_video_path(@video), method: :delete %>
 
-<%= link_to "コメントする", user_video_comments_path(@video) %>
+<%= link_to "コメント", user_video_comments_path(@video) %>

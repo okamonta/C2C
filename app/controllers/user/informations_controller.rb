@@ -25,9 +25,13 @@ class User::InformationsController < ApplicationController
   end
   
   def edit
+    @information = Information.find(params[:id])
   end
   
   def update
+    @information = Information.find(params[:id])
+    @information.update(information_params)
+    redirect_to user_information_path(@information)
   end
   
   def destroy

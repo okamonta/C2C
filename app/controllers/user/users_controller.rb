@@ -10,7 +10,18 @@ class User::UsersController < ApplicationController
   end
   
   def index
+    # @user = User.find(params[:id])
+    # @users = User.all
     @users = User.where("users.account ==  1")
+    # if current_user == @user.account = 'challenger'
+    #   @users = User.where("users.account == 1")
+    # else
+    #   @users = User.all
+    # end
+  end
+  
+  def whole
+    @users = User.all
   end
   
   def edit

@@ -58,6 +58,17 @@
               <%= @user_status.name %>
           </td>
         </tr>
+        
+        <tr>
+          <td>会員ステータス</td>
+          <td>
+            <% if @user.active == true %>
+              <span class="text-success font-weight-bold">会員</span>
+            <% else %>
+              <span class="text-danger font-weight-bold">退会</span>
+            <% end %>
+          </td>
+        </tr>
 
         <tr>
           <td></td>
