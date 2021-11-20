@@ -23,7 +23,7 @@ Rails.application.routes.draw do
     resources :comments, only: [:index, :show, :edit, :update]
     resources :genres, only: [:index, :show, :create, :edit, :update]
     resources :statuses, only: [:index, :show, :create, :edit, :update]
-    resources :informations, only: [:index, :show, :edit, :update]
+    resources :informations, only: [:index, :show, :edit, :update, :destroy]
   end
   
   devise_for :users,skip: [:passwords,], controllers: {

@@ -21,6 +21,7 @@ class User::VideosController < ApplicationController
   def index
     # @user = User.find(current_user.id)
     # @videos = Video.all
+    @user = current_user
     if current_user.account == "challenger"
       @videos = Video.where(user_id: current_user.id)
     else

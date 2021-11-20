@@ -1,0 +1,9 @@
+<h2>告知詳細</h2>
+
+[title]
+<%= @information.title %>
+
+[content]
+<%= @information.content %>
+
+<%= link_to "削除する", admin_information_path(@information), method: :delete %>

@@ -13,6 +13,8 @@ class User < ApplicationRecord
   belongs_to :genre, optional: true
   belongs_to :status, optional: true
   
+  attachment :icon
+  
   
   # 自分がフォローされる側（被フォロー）の関係性
   has_many :reverse_of_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy

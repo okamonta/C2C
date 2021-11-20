@@ -1,9 +1,63 @@
-<h2>動画投稿</h2>
-
-<%= form_with model: @video, url: user_videos_path, local: true do |f| %>
-  <p>video</p><%= f.file_field :video %> <br>
-  <p>title</p><%= f.text_field :title %> <br>
-  <p>content</p><%= f.text_area :content %> <br>
-  <p>genre</p><%= f.collection_select :genre_id, Genre.all, :id, :name, include_blank: "--選択して下さい--" %> <br>
-  <%= f.submit %>
-<% end %>
+<div class="p-main mt-3">
+  <div class="row mx-0 ml-2">
+    <i class="fas fa-arrow-left"></i>
+    <%= link_to "戻る", user_user_path(current_user) %>
+  </div>
+  <h2 class="text-center mb-3 pb-3" style="color: #1a1a1a; border-bottom: solid 1px #EB3642;">動画投稿</h2>
+  <div class="row justify-content-center">
+    <div class="col-10">
+      <div class>
+        <div class="card-body pb-3">
+          <h3>質問したい内容を動画でお送りください</h3>
+        </div>
+        <div class="col-xs-12 mx-auto video_border">
+          <%= form_with model: @video, url: user_videos_path, local: true do |f| %>
+            <div class="form-group row px-2">
+              <label for="video" class="col-md-4 col-form-label text-md-right c2c_info_text">
+                動画
+                <span class="badge badge-danger">必須</span>
+              </label>
+              <div class="col-md-6">
+                <label class="c2c_input">
+                  <%= f.file_field :video %>
+                </label>
+              </div>
+            </div>
+            <div class="form-group row px-2">
+              <label for="title" class="col-md-4 col-form-label text-md-right c2c_info_text">
+                タイトル
+                <span class="badge badge-danger">必須</span>
+              </label>
+              <div class="col-md-6">
+                <%= f.text_field :title %>
+              </div>
+            </div>
+            <div class="form-group row px-2">
+              <label for="content" class="col-md-4 col-form-label text-md-right c2c_info_text">
+                内容
+                <span class="badge badge-danger">必須</span>
+              </label>
+              <div class="col-md-6">
+                <%= f.text_area :content %>
+              </div>
+            </div>
+            <div class="form-group row px-2 mb-4">
+              <label for="genre" class="col-md-4 col-form-label text-md-right c2c_info_text">
+                ジャンル
+                <span class="badge badge-danger">必須</span>
+              </label>
+              <div class="col-md-6">
+                <%= f.collection_select :genre_id, Genre.all, :id, :name, include_blank: "--選択して下さい--" %>
+              </div>
+            </div>
+            <div class="form-group row px-2">
+              <div class="col-md-6 offset-md-3 text-center">
+                <%= f.submit "登録する" %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

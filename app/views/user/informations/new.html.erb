@@ -1,12 +1,12 @@
 <h2>告知投稿</h2>
 
-<%= form_with model:@informations, url: user_informations_path, local:true do |f| %>
+<%= form_with model:@information, url: user_informations_path, local:true do |f| %>
       
   <div class="form-group">
     <%= f.label :title %>
     <%= f.text_field :title, class: 'form-control information_title' %>
   </div>
-      >
+      
   <div class="form-group">
     <%= f.label :content %>
     <%= f.text_area :content, class: 'form-control information_body' %>

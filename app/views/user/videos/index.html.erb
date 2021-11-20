@@ -1,3 +1,26 @@
-<% @videos.each do |video| %>
-  <%= link_to video.title, user_video_path(video) %>
-<% end %>
+<div class="p-main mt-3">
+  <div class="row mx-0 ml-2">
+    <i class="fas fa-arrow-left"></i>
+    <%= link_to "戻る", user_user_path(@user) %>
+  </div>
+  <h2 class="text-center mb-3 pb-3" style="color: #1a1a1a; border-bottom: solid 1px #EB3642;">クイックスタート一覧</h2>
+  <div class="row justify-content-center mx-1 my-4">
+    <% @videos.each do |video| %>
+    <div class="col-md-6">
+      <div class="card mb-3">
+        <div class="card -body p-2">
+          <h5 class="card-text">タイトル：<%= link_to video.title, user_video_path(video) %></h5>
+          <h7 class="card-text">ジャンル：</h7>
+          <p class="card-text"><%= video.content %></p>
+          <p class="my-0">コメント数：<%= video.comments.count %></p>
+          <p class="card-text"><%= video.created_at %></p>
+          <h7 calss="media">ユーザー名：</h7>
+        </div>
+        <div class="text-center mb-2">
+          <%= link_to "動画視聴", user_video_path(video) %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
