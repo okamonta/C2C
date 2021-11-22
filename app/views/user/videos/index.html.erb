@@ -1,9 +1,9 @@
 <div class="p-main mt-3">
   <div class="row mx-0 ml-2">
     <i class="fas fa-arrow-left"></i>
-    <%= link_to "戻る", user_user_path(@user) %>
+    <%= link_to "戻る", user_user_path(current_user) %>
   </div>
-  <h2 class="text-center mb-3 pb-3" style="color: #1a1a1a; border-bottom: solid 1px #EB3642;">クイックスタート一覧</h2>
+  <h2 class="text-center mb-3 pb-3" style="color: #1a1a1a; border-bottom: solid 1px #EB3642;">一覧</h2>
   <div class="row justify-content-center mx-1 my-4">
     <% @videos.each do |video| %>
     <div class="col-md-6">

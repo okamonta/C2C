@@ -12,6 +12,7 @@
         </div>
         <div class="col-xs-12 mx-auto video_border">
           <%= form_with model: @video, url: user_videos_path, local: true do |f| %>
+          
             <div class="form-group row px-2">
               <label for="video" class="col-md-4 col-form-label text-md-right c2c_info_text">
                 動画
@@ -23,6 +24,7 @@
                 </label>
               </div>
             </div>
+            
             <div class="form-group row px-2">
               <label for="title" class="col-md-4 col-form-label text-md-right c2c_info_text">
                 タイトル
@@ -32,6 +34,7 @@
                 <%= f.text_field :title %>
               </div>
             </div>
+            
             <div class="form-group row px-2">
               <label for="content" class="col-md-4 col-form-label text-md-right c2c_info_text">
                 内容
@@ -41,6 +44,7 @@
                 <%= f.text_area :content %>
               </div>
             </div>
+            
             <div class="form-group row px-2 mb-4">
               <label for="genre" class="col-md-4 col-form-label text-md-right c2c_info_text">
                 ジャンル
@@ -50,11 +54,13 @@
                 <%= f.collection_select :genre_id, Genre.all, :id, :name, include_blank: "--選択して下さい--" %>
               </div>
             </div>
+            
             <div class="form-group row px-2">
               <div class="col-md-6 offset-md-3 text-center">
-                <%= f.submit "登録する" %>
+                <%= f.submit "新規登録", class: 'btn btn-success' %>
               </div>
             </div>
+            
           <% end %>
         </div>
       </div>

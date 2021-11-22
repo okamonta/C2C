@@ -4,9 +4,9 @@
     <div class="col-md-12">
       <%= form_with model: @user,url: user_user_path(current_user), local: true do |f| %>
         <table class="table">
-          <!--<tr>-->
-          <!--  <th>%= f.attachment_field :icon %></th>-->
-          <!--</tr>-->
+          <tr>
+            <th>アイコン</th>
+            <th><%= f.attachment_field :icon %></th>
           <tr>
             <th>名前</th>
             <th><%= f.text_field :full_name %></th>

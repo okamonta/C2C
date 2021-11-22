@@ -10,13 +10,23 @@
           <div class="form-group row py-1">
             <label for="full_name" class="col-md-4 col-form-label text-md-right">
               <i class="fas fa-map-marker-alt"></i>
+              アイコン<span class="text-secondary">(必須)</span>
+            </label>
+            <div class="col-md-6">
+              <%= attachment_image_tag @user, :icon, size: "300x300" %>
+            </div>
+          </div>
+
+          <div class="form-group row py-1">
+            <label for="full_name" class="col-md-4 col-form-label text-md-right">
+              <i class="fas fa-map-marker-alt"></i>
               お名前<span class="text-secondary">(必須)</span>
             </label>
             <div class="col-md-6">
               <%= @user.full_name %>
             </div>
           </div>
-          
+
           <div class="form-group row py-1">
             <label for="nick_name" class="col-md-4 col-form-label text-md-right">
               <i class="fas fa-user-alt"></i>
@@ -26,7 +36,7 @@
               <%= @user.nick_name %>
             </div>
           </div>
-          
+
           <div class="form-group row py-1">
             <label for="genre" class="col-md-4 col-form-label text-md-right">
               <i class="fas fa-user-alt"></i>
@@ -37,7 +47,7 @@
               <%= @user_genre.name %>
             </div>
           </div>
-          
+
           <div class="form-group row py-1">
             <label for="status" class="col-md-4 col-form-label text-md-right">
               <i class="fas fa-user-alt"></i>
@@ -48,7 +58,7 @@
               <%= @user_status.name %>
             </div>
           </div>
-          
+
           <div class="form-group row py-1">
             <label for="account" class="col-md-4 col-form-label text-md-right">
               <i class="fas fa-user-alt"></i>
@@ -58,7 +68,7 @@
               <%= @user.account %>
             </div>
           </div>
-          
+
           <div class="form-group row py-1">
             <label for="email" class="col-md-4 col-form-label text-md-right">
               <i class="fas fa-user-alt"></i>
@@ -68,7 +78,7 @@
               <%= @user.email %>
             </div>
           </div>
-          
+
           <div class="form-group row py-1">
             <label for="message" class="col-md-4 col-form-label text-md-right">
               <i class="fas fa-user-alt"></i>
@@ -78,90 +88,156 @@
               <%= @user.message %>
             </div>
           </div>
-          
+
           <div class="form-group row mb-0">
             <div class="col-md-6 offset-md-4 text-center mt-2 mx-auto">
-              <%= link_to "編集", edit_user_user_path(@user.id) %> 
+              <%= link_to "編集", edit_user_user_path(@user.id) %>
             </div>
           </div>
-          
+
           <div class="form-group row mb-0">
             <div class="col-md-6 offset-md-4 text-center mt-2 mx-auto">
-              <%= link_to "動画投稿", new_user_video_path %> 
+              <%= link_to "動画投稿", new_user_video_path %>
             </div>
           </div>
-          
+
           <div class="form-group row mb-0">
             <div class="col-md-6 offset-md-4 text-center mt-2 mx-auto">
-              <%= link_to "動画一覧", user_videos_path %> 
+              <%= link_to "動画一覧", user_videos_path %>
             </div>
           </div>
-          
+
           <div class="form-group row mb-0">
             <div class="col-md-6 offset-md-4 text-center mt-2 mx-auto">
-              <%= link_to "コーチ一覧", user_users_path %> 
+              <%= link_to "コーチ一覧", user_users_path %>
             </div>
           </div>
-          
+
         </div>
       </div>
     </div>
   </div>
 </div>
 <% else %>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <table class="table">
-          <!--<tr>-->
-          <!--  %= attachment_image_tag(@user, :icon, :full, 100, 100, fallback: "no_image.jpeg") %>-->
-          <!--</tr>-->
-          <tr>
-            <th>名前</th>
-            <th><%= @user.full_name %></th>
-          </tr>
-          <tr>
-            <th>ニックネーム</th>
-            <th><%= @user.nick_name %></th>
-          </tr>
-          <tr>
-            <% @user_genre = @user.genre %>
-            <th>ジャンル</th>
-            <th><%= @user_genre.name %></th>
-          </tr>
-          <tr>
-            <% @user_status = @user.status %>
-            <th>ステータス</th>
-            <th><%= @user_status.name %></th>
-          </tr>
-          <tr>
-            <th>アカウント</th>
-            <th><%= @user.account %></th>
-          </tr>
-          <tr>
-            <th>メールアドレス</th>
-            <th><%= @user.email %></th>
-          </tr>
-          <tr>
-            <th>メッセージ</th>
-            <th><%= @user.message %></th>
-          </tr>
-          <tr>
-            <th><%= link_to "編集", edit_user_user_path(@user.id) %></th>
-          </tr>
-          <tr>
-            <th><%= link_to "動画一覧", user_videos_path %></th>
-          </tr>
-          <tr>
-            <th><%= link_to "告知投稿", new_user_information_path %></th>
-          </tr>
-          <tr>
-            <th><%= link_to "告知一覧", user_informations_path %></th>
-          </tr>
-          <tr>
-            <th><%= link_to "ユーザ一覧", whole_user_users_path %></th>
-          </tr>
-        </table>
+<div class="container mb-4">
+  <div class="row justify-content-center">
+    <div class="col-md-12 col-sm-12 col-12">
+      <div class="card">
+        <div class="card-header">プロフィール</div>
+        <div class="card-body">
+          <!--アイコン-->
+          <div class="form-group row py-1">
+            <label for="full_name" class="col-md-4 col-form-label text-md-right">
+              <i class="fas fa-map-marker-alt"></i>
+              アイコン<span class="text-secondary">(必須)</span>
+            </label>
+            <div class="col-md-6">
+              <%= attachment_image_tag @user, :icon, size: "300x300" %>
+            </div>
+          </div>
+
+          <div class="form-group row py-1">
+            <label for="full_name" class="col-md-4 col-form-label text-md-right">
+              <i class="fas fa-map-marker-alt"></i>
+              お名前<span class="text-secondary">(必須)</span>
+            </label>
+            <div class="col-md-6">
+              <%= @user.full_name %>
+            </div>
+          </div>
+
+          <div class="form-group row py-1">
+            <label for="nick_name" class="col-md-4 col-form-label text-md-right">
+              <i class="fas fa-user-alt"></i>
+              ニックネーム<span class="text-secondary">(必須)</span>
+            </label>
+            <div class="col-md-6">
+              <%= @user.nick_name %>
+            </div>
+          </div>
+
+          <div class="form-group row py-1">
+            <label for="genre" class="col-md-4 col-form-label text-md-right">
+              <i class="fas fa-user-alt"></i>
+              ジャンル<span class="text-secondary">(必須)</span>
+            </label>
+            <div class="col-md-6">
+              <% @user_genre = @user.genre %>
+              <%= @user_genre.name %>
+            </div>
+          </div>
+
+          <div class="form-group row py-1">
+            <label for="status" class="col-md-4 col-form-label text-md-right">
+              <i class="fas fa-user-alt"></i>
+              ステータス<span class="text-secondary">(必須)</span>
+            </label>
+            <div class="col-md-6">
+              <% @user_status = @user.status %>
+              <%= @user_status.name %>
+            </div>
+          </div>
+
+          <div class="form-group row py-1">
+            <label for="account" class="col-md-4 col-form-label text-md-right">
+              <i class="fas fa-user-alt"></i>
+              アカウント<span class="text-secondary">(必須)</span>
+            </label>
+            <div class="col-md-6">
+              <%= @user.account %>
+            </div>
+          </div>
+
+          <div class="form-group row py-1">
+            <label for="email" class="col-md-4 col-form-label text-md-right">
+              <i class="fas fa-user-alt"></i>
+              メールアドレス<span class="text-secondary">(必須)</span>
+            </label>
+            <div class="col-md-6">
+              <%= @user.email %>
+            </div>
+          </div>
+
+          <div class="form-group row py-1">
+            <label for="message" class="col-md-4 col-form-label text-md-right">
+              <i class="fas fa-user-alt"></i>
+              メッセージ<span class="text-secondary">(必須)</span>
+            </label>
+            <div class="col-md-6">
+              <%= @user.message %>
+            </div>
+          </div>
+
+          <div class="form-group row mb-0">
+            <div class="col-md-6 offset-md-4 text-center mt-2 mx-auto">
+              <%= link_to "編集", edit_user_user_path(@user) %>
+            </div>
+          </div>
+
+          <div class="form-group row mb-0">
+            <div class="col-md-6 offset-md-4 text-center mt-2 mx-auto">
+              <%= link_to "告知投稿", new_user_information_path %>
+            </div>
+          </div>
+
+          <div class="form-group row mb-0">
+            <div class="col-md-6 offset-md-4 text-center mt-2 mx-auto">
+              <%= link_to "動画一覧", user_videos_path %>
+            </div>
+          </div>
+          
+          <div class="form-group row mb-0">
+            <div class="col-md-6 offset-md-4 text-center mt-2 mx-auto">
+              <%= link_to "告知一覧", user_informations_path %>
+            </div>
+          </div>
+
+          <div class="form-group row mb-0">
+            <div class="col-md-6 offset-md-4 text-center mt-2 mx-auto">
+              <%= link_to "コーチ一覧", user_users_path %>
+            </div>
+          </div>
+          
         <% if current_user != @user %>
           <% if current_user.following?(@user) %>
             <%= link_to "フォローを外す", user_user_relationships_path(@user.id), method: :delete, class: "btn btn-info" %>
@@ -169,11 +245,14 @@
             <%= link_to "フォローする", user_user_relationships_path(@user.id), method: :post, class: "btn btn-success" %>
           <% end %>
         <% else %>
-          <%= link_to edit_user_user_path(@user.id), class:"btn btn-default btn-block" do %>
+          <%= link_to edit_user_user_path(@user), class:"btn btn-default btn-block" do %>
             <span class="fas fa-user-cog"></span>
           <% end %>
         <% end %>
+
+        </div>
       </div>
     </div>
   </div>
+</div>
 <% end %>

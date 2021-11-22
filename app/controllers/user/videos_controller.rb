@@ -1,9 +1,9 @@
 class User::VideosController < ApplicationController
-  
+
   def new
     @video = Video.new
   end
-  
+
   def create
     @video = Video.new(video_params)
     @video.user_id = current_user.id
@@ -17,7 +17,7 @@ class User::VideosController < ApplicationController
     @user = @video.user
     @comment = Comment.new
   end
-  
+
   def index
     # @user = User.find(current_user.id)
     # @videos = Video.all
@@ -28,7 +28,7 @@ class User::VideosController < ApplicationController
       @videos = Video.all
     end
   end
-  
+
   def destroy
     @video = Video.find(params[:id])
     @video.destroy
@@ -40,5 +40,5 @@ class User::VideosController < ApplicationController
   def video_params
     params.require(:video).permit(:title, :content, :genre_id, :video)
   end
-  
+
 end
