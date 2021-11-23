@@ -73,3 +73,8 @@ gem 'enum_help'
 
 gem 'devise'
 gem 'devise-i18n'
+
+gem 'dotenv-rails'
+group :production do
+  gem 'mysql2'
+end
