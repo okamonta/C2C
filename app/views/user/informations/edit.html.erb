@@ -8,7 +8,7 @@
       <div class="card">
         <div class="card-header">告知編集</div>
         <div card-body>
-        <%= form_with model:@information, url: user_informations_path, local:true do |f| %>
+        <%= form_with model: @information, url: user_information_path(@information), local:true do |f| %>
         
           <div class="form-group row py-1">
             <label for="title" class="col-md-4 col-form-label text-md-right">

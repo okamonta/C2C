@@ -6,9 +6,6 @@ Rails.application.routes.draw do
     get 'homes/contact' => 'homes#contact'
     resources :users, only: [:index, :show, :edit, :update] do
       resource :relationships, only: [:create, :destroy]
-      collection do
-        get 'whole'
-      end
     end
     resources :videos, only: [:new, :index, :show, :create, :edit, :update, :destroy] do
       resources :comments, only: [:index, :create, :destroy]
