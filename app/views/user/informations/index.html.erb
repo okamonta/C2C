@@ -6,7 +6,9 @@
   <h2 class="text-center mb-3 pb-3" style="color: #1a1a1a+;">告知</h2>
   <h3 class="text-center mb-0" style="color: #1a1a1a+; background-color: #ffd5da; padding: 10px 0; border-top: solid 1px #EB3642;">告知一覧</h3>
   <div class="row justify-content-center mx-1 my-4">
+    
     <% @informations. each do |information| %>
+  
     <div class="col-md-6">
       <div class="card mb-3">
         <div class="card -body p-2">
@@ -16,11 +18,14 @@
           <p class="card-text"><%= information.created_at %></p>
           <h7 calss="media">ユーザー名：</h7>
         </div>
+        
         <div class="text-center mb-2">
           <%= link_to "告知詳細", user_information_path(information) %>
         </div>
+        
       </div>
     </div>
     <% end %>
+    
   </div>
 </div>

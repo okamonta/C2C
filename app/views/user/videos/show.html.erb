@@ -3,12 +3,15 @@
     <i class="fas fa-arrow-left"></i>
     <%= link_to "戻る", user_videos_path %>
   </div>
-  <h2 class="text-center mb-3 pb-3" style="color: #1a1a1a; border-bottom: solid 1px #EB3642;">動画詳細</h2>
+  <h2 class="text-center mb-3 pb-3" style="color: #1a1a1a+;">動画</h2>
+  <h3 class="text-center mb-0" style="color: #1a1a1a+; background-color: #ffd5da; padding: 10px 0; border-top: solid 1px #EB3642;">動画詳細</h3>
   <div class="row justify-content-center">
     <div class="col-10">
       <div class>
         <div class="col-xs-12 mx-auto video_border">
+          
           <% if @video.video.attached? %>
+          
             <div class="form-group row px-2">
               <label for="video" class="col-md-4 col-form-label text-md-right c2c_info_text">
                 動画
@@ -19,6 +22,7 @@
                 </label>
               </div>
             </div>
+            
             <div class="form-group row px-2">
               <label for="title" class="col-md-4 col-form-label text-md-right c2c_info_text">
                 タイトル
@@ -27,6 +31,7 @@
                 <p><%= @video.title %></p>
               </div>
             </div>
+            
             <div class="form-group row px-2">
               <label for="content" class="col-md-4 col-form-label text-md-right c2c_info_text">
                 内容
@@ -35,20 +40,28 @@
                 <p><%= @video.content %></p>
               </div>
             </div>
+            
             <div class="form-group row px-2 mb-4">
               <label for="genre" class="col-md-4 col-form-label text-md-right c2c_info_text">
                 ジャンル
               </label>
               <div class="col-md-6">
                 <!--% @video_genre = @video.genre %>-->
-                <p><%= @video.genre_id %></p>
+                <p><%= @video.genre.name %></p>
               </div>
             </div>
+            
           <% end %>
+          
           <div class="row justify-content-center">
-            <!--自分ののみ削除表示-->
-            <%= link_to "削除する", user_video_path(@video), method: :delete %>
-            <%= link_to "コメントする", user_video_comments_path(@video) %>
+            <% video_user = @video.user %>
+              <% if current_user == video_user %>
+                <%= link_to "削除", user_video_path(@video), method: :delete %>
+                |
+                <%= link_to "コメントする", user_video_comments_path(@video) %>
+              <% else %>
+                <%= link_to "コメントする", user_video_comments_path(@video) %>
+              <% end %>
           </div>
         </div>
       </div>
