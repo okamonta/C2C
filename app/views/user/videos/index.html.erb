@@ -19,25 +19,21 @@
             タイトル：<%= link_to video.title, user_video_path(video) %>
           </h5>
             
-          <h7 class="card-text">
+          <h6 class="card-text">
             ジャンル：<%= video.genre.name %>
-          </h7>
+          </h6>
           
-          <p class="card-text">
-            <%= video.content %>
-          </p>
+          <h7 calss="media">
+            ニックネーム：<%= video.user.nick_name %>
+          </h7>
           
           <p class="my-0">
             コメント数：<%= video.comments.count %>
           </p>
           
           <p class="card-text">
-            <%= video.created_at %>
+            <%= video.created_at.to_s(:datetime_jp) %>
           </p>
-          
-          <h7 calss="media">
-            ニックネーム：<%= video.user.nick_name %>
-          </h7>
           
         </div>
         

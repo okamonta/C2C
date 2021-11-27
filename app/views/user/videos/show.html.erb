@@ -18,7 +18,7 @@
               </label>
               <div class="col-md-6">
                 <label class="c2c_input">
-                  <video src="<%= rails_blob_path(@video.video) %>" type="video/mp4" controls></video>
+                  <video src="<%= rails_blob_path(@video.video) %>" width="500" height="500" type="video/mp4" controls></video>
                 </label>
               </div>
             </div>
@@ -46,7 +46,6 @@
                 ジャンル
               </label>
               <div class="col-md-6">
-                <!--% @video_genre = @video.genre %>-->
                 <p><%= @video.genre.name %></p>
               </div>
             </div>
