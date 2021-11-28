@@ -13,7 +13,6 @@
       <div class="card mb-3">
         <div class="card -body p-2">
           <h5 class="card-text">タイトル：<%= link_to information.title, user_information_path(information) %></h5>
-          <h7 class="card-text">ジャンル：</h7>
           <h7 calss="card-text">ユーザー名：<%= information.user.full_name %></h7>
           <p class="card-text"><%= information.created_at.to_s(:datetime_jp)  %></p>
         </div>

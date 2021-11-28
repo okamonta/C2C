@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   namespace :user do
     root to: 'homes#top'
     get 'homes/contact' => 'homes#contact'
-    # get '/search' => 'searches#search'
     resources :users, only: [:index, :show, :edit, :update] do
       resource :relationships, only: [:create, :destroy]
     end

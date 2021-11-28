@@ -29,23 +29,11 @@
               </div>
             </div>
             
-            <!--<div class="form-group row px-2 mb-4">-->
-            <!--  <label for="genre" class="col-md-4 col-form-label text-md-right c2c_info_text">-->
-            <!--    ジャンル-->
-            <!--  </label>-->
-            <!--  <div class="col-md-6">-->
-            <!--    % @information_genre = @information.genre %>-->
-            <!--    <p>%= @information_genre.name %></p>-->
-            <!--  </div>-->
-            <!--</div>-->
-            
           <div class="row justify-content-center">
             <% information_user = @information.user %>
               <% if current_user == information_user %>
-              
-                <%= link_to "編集", edit_user_information_path(@information) %>
-                |
-                <%= link_to "削除", user_information_path(@information), method: :delete %>
+                <%= link_to "編集", edit_user_information_path(@information), class:"btn btn-primary ml-3" %>
+                <%= link_to "削除", user_information_path(@information), method: :delete, class:"btn btn-primary ml-3" %>
               <% end %>
           </div>
         </div>

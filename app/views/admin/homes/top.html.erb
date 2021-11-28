@@ -1,13 +1,42 @@
-<h1>top画面</h1>
+<div class="container mb-4">
+  <h3 class="text-center mb-0" style="color: #1a1a1a+; background-color: #ffd5da; padding: 10px 0; border-top: solid 1px #EB3642;">トップ画面</h3>
+  <div class="row justify-content-center">
+    <div class="col-md-12 col-sm-12 col-12">
+      <div class="card">
+        <div class="card-body">
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <%= link_to 'ユーザ一覧', admin_users_path %>
-      <%= link_to '動画投稿一覧', admin_videos_path %>
-      <%= link_to '告知一覧', admin_informations_path %>
-      <%= link_to 'ジャンル一覧', admin_genres_path %>
-      <%= link_to 'ステータス一覧', admin_statuses_path %>
+          <div class="form-group row mb-0">
+            <div class="col-md-6 offset-md-4 text-center mt-2 mx-auto">
+              <%= link_to 'ユーザ一覧', admin_users_path, class: 'btn btn-default' %>
+            </div>
+          </div>
+
+          <div class="form-group row mb-0">
+            <div class="col-md-6 offset-md-4 text-center mt-2 mx-auto">
+              <%= link_to '動画投稿一覧', admin_videos_path, class: 'btn btn-default' %>
+            </div>
+          </div>
+
+          <div class="form-group row mb-0">
+            <div class="col-md-6 offset-md-4 text-center mt-2 mx-auto">
+              <%= link_to '告知一覧', admin_informations_path, class: 'btn btn-default' %>
+            </div>
+          </div>
+          
+          <div class="form-group row mb-0">
+            <div class="col-md-6 offset-md-4 text-center mt-2 mx-auto">
+              <%= link_to 'ジャンル一覧', admin_genres_path, class: 'btn btn-default' %>
+            </div>
+          </div>
+
+          <div class="form-group row mb-0">
+            <div class="col-md-6 offset-md-4 text-center mt-2 mx-auto">
+              <%= link_to 'ステータス一覧', admin_statuses_path, class: 'btn btn-default' %>
+            </div>
+          </div>
+
+        </div>
+      </div>
     </div>
   </div>
 </div>

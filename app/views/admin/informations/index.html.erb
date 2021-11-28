@@ -1,3 +1,35 @@
-<% @informations.each do |information| %>
-  <%= link_to information.title, admin_information_path(information) %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <h4 class="mypage-title">告知一覧</h4>
+    </div>
+    <div class="col-md-9"></div>
+  </div>  
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table user-index-table">
+        <thead>
+          <tr>
+            <th>タイトル</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @informations.each do |information| %>
+          <tr>
+            <td><%= link_to information.title, admin_information_path(information) %></td>
+          </tr>
+          <% end %>          
+          <tr>
+            <td></td>
+            <td>
+              <div class="actions">
+                <%= link_to "戻る", admin_root_path, class:"btn btn-primary ml-3" %>
+              </div>
+            </td>
+          </tr>
+        
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

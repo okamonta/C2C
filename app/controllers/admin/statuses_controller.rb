@@ -21,7 +21,7 @@ class Admin::StatusesController < ApplicationController
   def update
     @status = Status.find(params[:id])
     @status.update(status_params)
-    redirect_to admin_stautses_path
+    redirect_to admin_statuses_path
   end
   
   def status_params

@@ -1,3 +1,35 @@
-<% @videos.each do |video| %>
-  <%= link_to video.title, admin_video_path(video) %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <h4 class="mypage-title">動画一覧</h4>
+    </div>
+    <div class="col-md-9"></div>
+  </div>  
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table user-index-table">
+        <thead>
+          <tr>
+            <th>タイトル</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @videos.each do |video| %>
+          <tr>
+            <td><%= link_to video.title, admin_video_path(video) %></td>
+          </tr>
+          <% end %>          
+          <tr>
+            <td></td>
+            <td>
+              <div class="actions">
+                <%= link_to "戻る", admin_root_path, class:"btn btn-primary ml-3" %>
+              </div>
+            </td>
+          </tr>
+        
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

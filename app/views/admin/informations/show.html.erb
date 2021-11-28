@@ -6,4 +6,5 @@
 [content]
 <%= @information.content %>
 
-<%= link_to "削除する", admin_information_path(@information), method: :delete %>
+<%= link_to "削除する", admin_information_path(@information), method: :delete, class:"btn btn-primary ml-3" %>
+<%= link_to "戻る", admin_informations_path, class:"btn btn-primary ml-3" %>

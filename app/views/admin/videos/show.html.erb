@@ -1,15 +1,12 @@
 <h2>動画詳細</h2>
 
 <% if @video.video.attached? %>
-  <video src="<%= rails_blob_path(@video.video) %>" type="video/mp4" controls></video>
+  <video src="<%= rails_blob_path(@video.video) %>" width="500" height="500" type="video/mp4" controls></video>
   <p><%= @video.title %></p> <br>
   <p><%= @video.content %></p> <br>
   <% @video_genre = @video.genre %>
   <p><%= @video_genre.name %></p>
 <% end %>
 
-<!--%= render 'comments/comment', video: @video, comment: @comment %>-->
-
-<%= link_to "削除する", admin_video_path(@video), method: :delete %>
-
-<%= link_to "コメント", user_video_comments_path(@video) %>
+<%= link_to "削除する", admin_video_path(@video), method: :delete, class:"btn btn-primary ml-3" %>
+<%= link_to "戻る", admin_videos_path, class:"btn btn-primary ml-3" %>
