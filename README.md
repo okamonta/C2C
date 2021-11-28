@@ -45,4 +45,4 @@ https://docs.google.com/spreadsheets/d/1voM496UtqmX1pDva0tqWxyvEIlHWA7shR1HLtVzp
 - IDE：Cloud9
 
 ## 使用素材
-使用検討中です
+ロゴ画像：Fotor
