@@ -5,8 +5,9 @@ class User::SearchesController < ApplicationController
     @genre_id = params[:genre_id]
     if @model == 'user'
       @users = User.where("users.account ==  1")
+      # @users = User.all
     else
-      @records = Video.search_for(@genre_id)
+      @videos = Video.search_for(@genre_id)
     end
   end
   
