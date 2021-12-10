@@ -8,7 +8,7 @@ class Video < ApplicationRecord
   has_one_attached :video
   
   def self.search_for(genre_id)
-    if genre_id == 3
+    if genre_id == 1
       Video.where(name: genre_id)
     end
   end
