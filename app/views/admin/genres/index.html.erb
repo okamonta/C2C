@@ -3,7 +3,6 @@
     <div class="col-md-6">
       <h4 class="mypage-title">ジャンル一覧・追加</h4>
 
-      <table class="table table-noborder ganre-add-table">
         <%= form_with model:@genre, url:admin_genres_path, local:true do |f| %>
           <div class="row">
             <div class="form-group">
@@ -20,7 +19,6 @@
             </div>
           </div>
         <% end %>
-      </table>
 
       <div class="genre-table">
         <table class="table table-hover user-index-table">

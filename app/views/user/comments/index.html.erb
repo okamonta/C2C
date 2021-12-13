@@ -9,31 +9,32 @@
   <div class="row justify-content-center mx-1 my-4">
   
       <table>
-      <% @video.comments.each do |comment| %>
-        <% comment_user = comment.user %>
-        <tr>
-        	<td>
-        		<%= link_to user_user_path(comment_user) do %>
-          		<%= comment_user.nick_name %>
-        		<% end %>
-        		(<%= comment_user.account %>)
-         	　<%= comment.comment %>
-        	<% if current_user == comment_user %>
-          	<%= link_to 'Destroy', user_video_comment_path(comment.video_id, comment.id), class: 'btn-sm btn-danger', method: :delete %>
-        	<% end %>       		
-        	</td>
-        </tr>
-      <% end %>
-      
-        <tr>
-          <%= form_with model:[@video,@comment], url: user_video_comments_path, method: :POST do |f| %>
-            <td><%= f.text_area :comment, size:"90x5" %></td>
-            <td><%= f.submit '送信'%></td>
-          <% end %>
-        </tr>
+        <% @video.comments.each do |comment| %>
+          <% comment_user = comment.user %>
+          <tr>
+          	<td>
+          		<%= link_to user_user_path(comment_user) do %>
+            		<%= comment_user.nick_name %>
+          		<% end %>
+          	</td>
+          	<td>
+          		(<%= comment_user.account %>)
+          	</td>
+          	<td>
+           	　<%= comment.comment %>
+           	</td>
+           	<td>
+            	<% if current_user == comment_user %>
+              	<%= link_to '削除', user_video_comment_path(comment.video_id, comment.id), class: 'btn-sm btn-danger', method: :delete %>
+            	<% end %>       		
+          	</td>
+          </tr>
+        <% end %>
       </table>
-  
-  </div>
-  
+      
+        <%= form_with model:[@video,@comment], url: user_video_comments_path, method: :POST do |f| %>
+          <%= f.text_area :comment, size:"90x5" %>
+          <%= f.submit '送信'%>
+        <% end %>
   </div>
 </div>

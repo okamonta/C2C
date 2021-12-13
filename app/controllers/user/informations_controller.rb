@@ -1,4 +1,6 @@
 class User::InformationsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :ensure_correct_user, only: [:edit, :update, :destroy]
   
   def new
     @information = Information.new
@@ -41,6 +43,13 @@ class User::InformationsController < ApplicationController
   
   def information_params
     params.require(:information).permit(:title, :content)
+  end
+  
+  def ensure_correct_user
+    @information = Information.find(params[:id])
+    unless @information.user == current_user
+      redirect_to user_informations_path
+    end
   end
 
 

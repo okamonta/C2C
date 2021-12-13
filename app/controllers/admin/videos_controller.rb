@@ -1,4 +1,5 @@
 class Admin::VideosController < ApplicationController
+  before_action :authenticate_admin!
   
   def show
     @video = Video.find(params[:id])

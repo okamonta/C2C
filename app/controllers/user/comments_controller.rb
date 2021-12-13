@@ -1,4 +1,5 @@
 class User::CommentsController < ApplicationController
+  before_action :authenticate_user!
   
   def index
     @video = Video.find(params[:video_id])
