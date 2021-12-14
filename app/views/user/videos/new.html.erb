@@ -16,7 +16,6 @@
             <div class="form-group row px-2">
               <label for="video" class="col-md-4 col-form-label text-md-right c2c_info_text">
                 動画
-                <span class="badge badge-danger">必須</span>
               </label>
               <div class="col-md-6">
                 <label class="c2c_input">
@@ -28,7 +27,6 @@
             <div class="form-group row px-2">
               <label for="title" class="col-md-4 col-form-label text-md-right c2c_info_text">
                 タイトル
-                <span class="badge badge-danger">必須</span>
               </label>
               <div class="col-md-6">
                 <%= f.text_field :title %>
@@ -38,7 +36,6 @@
             <div class="form-group row px-2">
               <label for="content" class="col-md-4 col-form-label text-md-right c2c_info_text">
                 内容
-                <span class="badge badge-danger">必須</span>
               </label>
               <div class="col-md-6">
                 <%= f.text_area :content %>
@@ -48,7 +45,6 @@
             <div class="form-group row px-2 mb-4">
               <label for="genre" class="col-md-4 col-form-label text-md-right c2c_info_text">
                 ジャンル
-                <span class="badge badge-danger">必須</span>
               </label>
               <div class="col-md-6">
                 <%= f.collection_select :genre_id, Genre.all, :id, :name, include_blank: "--選択して下さい--" %>
